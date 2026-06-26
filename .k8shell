@@ -1,0 +1,9 @@
+blueprint:
+  template: development
+  resources:
+    cpu: 8
+    memory: 8Gi
+  network:
+    networkPolicyClass: system
+
+     
