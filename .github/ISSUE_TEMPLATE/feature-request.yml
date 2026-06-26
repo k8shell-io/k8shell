@@ -44,3 +44,16 @@ body:
       description: Any workarounds or other approaches you've tried
     validations:
       required: false
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      description: How many users or workflows does this affect?
+      options:
+        - Critical — blocks core workflow for many users
+        - High — significant pain point, no good workaround
+        - Medium — useful improvement, workaround exists
+        - Low — nice to have / polish
+    validations:
+      required: true

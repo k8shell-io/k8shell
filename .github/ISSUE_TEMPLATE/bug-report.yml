@@ -52,7 +52,7 @@ body:
         2. Run '...'
         3. See error
     validations:
-      required: false
+      required: true
 
   - type: textarea
     id: environment
