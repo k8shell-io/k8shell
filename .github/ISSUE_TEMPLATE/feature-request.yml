@@ -9,15 +9,24 @@ body:
       label: Affected area
       description: Which part of the platform does this relate to?
       options:
-        - k8shelld (workspace daemon / PID 1)
-        - SSH proxy
-        - CI/CD — GitHub Actions Runners (ARC)
-        - Image registry & signing (Harbor / ghcr / cosign)
-        - Worktrace (runtime threat detection)
-        - Web dashboard / UI
-        - Auth — RBAC / OIDC / OAuth / tokens
-        - CLI
-        - Other / platform-wide
+        - "Access — SSH Proxy"
+        - "Access — API Server"
+        - "Access — Console"
+        - "Access — CLI"
+        - "Core — Identity"
+        - "Core — Authz"
+        - "Core — Session"
+        - "Core — Provisioner"
+        - "Core — k8shelld"
+        - "Security — SSH Shield"
+        - "Security — nfgate"
+        - "Security — Worktrace"
+        - "Infra — Postgres"
+        - "Infra — NATS"
+        - "Infra — Vault"
+        - "Infra — Registry"
+        - "CI/CD — GitHub Actions Runners (ARC)"
+        - "Not sure"
     validations:
       required: true
 

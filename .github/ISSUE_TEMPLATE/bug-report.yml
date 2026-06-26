@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for reporting this! Please fill in the fields below — the **Affected area** field especially helps us route this to the right team fast.
+        Thanks for reporting this! Describe **what you were doing**, not which service you think is at fault — the team will identify that from the logs.
 
   - type: dropdown
     id: area
@@ -14,16 +14,24 @@ body:
       label: Affected area
       description: Which part of the k8shell platform does this relate to?
       options:
-        - k8shelld (workspace daemon / PID 1)
-        - SSH proxy
-        - CI/CD — GitHub Actions Runners (ARC)
-        - Image registry & signing (Harbor / ghcr / cosign)
-        - Worktrace (runtime threat detection)
-        - Web dashboard / UI
-        - Auth — RBAC / OIDC / OAuth / tokens
-        - CLI
-        - Billing / account
-        - Not sure
+        - "Access — SSH Proxy"
+        - "Access — API Server"
+        - "Access — Console"
+        - "Access — CLI"
+        - "Core — Identity"
+        - "Core — Authz"
+        - "Core — Session"
+        - "Core — Provisioner"
+        - "Core — k8shelld"
+        - "Security — SSH Shield"
+        - "Security — nfgate"
+        - "Security — Worktrace"
+        - "Infra — Postgres"
+        - "Infra — NATS"
+        - "Infra — Vault"
+        - "Infra — Registry"
+        - "CI/CD — GitHub Actions Runners (ARC)"
+        - "Not sure"
     validations:
       required: true
 
@@ -58,11 +66,12 @@ body:
     id: environment
     attributes:
       label: Environment
-      description: Workspace image, CLI version, browser, cluster provider/version, etc.
+      description: Helm chart version, Kubernetes distribution/version, workspace image, browser if UI-related.
       placeholder: |
-        - k8shell CLI version:
+        - k8shell Helm chart version:
+        - Values overrides (if any):
+        - Kubernetes distribution and version:
         - Workspace image:
-        - Cluster provider/version:
         - Browser (if UI-related):
     validations:
       required: false
@@ -71,7 +80,8 @@ body:
     id: logs
     attributes:
       label: Relevant logs / screenshots
-      description: Paste logs, stack traces, or drag-and-drop screenshots. This will be auto-formatted as code.
+      description: |
+        Paste logs or stack traces below (auto-formatted as code). For service logs: `kubectl logs <pod> -n <k8shell-namespace>`. For workspace logs: `kbox logs` or `kubectl logs <workspace-pod> -n <workspaces-namespace>`. Attach large files by dragging a `.txt` file onto the comment box.
       render: shell
     validations:
       required: false
