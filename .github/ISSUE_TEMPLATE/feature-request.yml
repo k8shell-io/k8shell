@@ -1,0 +1,46 @@
+name: ✨ Feature Request
+description: Suggest an idea or improvement for the k8shell platform
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      description: Which part of the platform does this relate to?
+      options:
+        - k8shelld (workspace daemon / PID 1)
+        - SSH proxy
+        - CI/CD — GitHub Actions Runners (ARC)
+        - Image registry & signing (Harbor / ghcr / cosign)
+        - Worktrace (runtime threat detection)
+        - Web dashboard / UI
+        - Auth — RBAC / OIDC / OAuth / tokens
+        - CLI
+        - Other / platform-wide
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the pain point or limitation you're running into
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: What would you like to see happen?
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any workarounds or other approaches you've tried
+    validations:
+      required: false

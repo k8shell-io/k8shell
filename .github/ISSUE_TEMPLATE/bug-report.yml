@@ -1,0 +1,89 @@
+name: 🐛 Bug Report
+description: Report something that's broken or not working as expected
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this! Please fill in the fields below — the **Affected area** field especially helps us route this to the right team fast.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      description: Which part of the k8shell platform does this relate to?
+      options:
+        - k8shelld (workspace daemon / PID 1)
+        - SSH proxy
+        - CI/CD — GitHub Actions Runners (ARC)
+        - Image registry & signing (Harbor / ghcr / cosign)
+        - Worktrace (runtime threat detection)
+        - Web dashboard / UI
+        - Auth — RBAC / OIDC / OAuth / tokens
+        - CLI
+        - Billing / account
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A clear, concise description of the bug
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What you expected to happen instead
+    validations:
+      required: false
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to '...'
+        2. Run '...'
+        3. See error
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Workspace image, CLI version, browser, cluster provider/version, etc.
+      placeholder: |
+        - k8shell CLI version:
+        - Workspace image:
+        - Cluster provider/version:
+        - Browser (if UI-related):
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs / screenshots
+      description: Paste logs, stack traces, or drag-and-drop screenshots. This will be auto-formatted as code.
+      render: shell
+    validations:
+      required: false
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Critical — platform unusable / data loss
+        - High — major feature broken, no workaround
+        - Medium — workaround exists
+        - Low — cosmetic / minor annoyance
+    validations:
+      required: true

@@ -1,0 +1,38 @@
+name: ❓ Support / Question
+description: Ask a question or get help with something that isn't a bug or feature request
+title: "[Support]: "
+labels: ["question", "needs-triage"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      description: Which part of the platform is this about?
+      options:
+        - k8shelld (workspace daemon / PID 1)
+        - SSH proxy
+        - CI/CD — GitHub Actions Runners (ARC)
+        - Image registry & signing (Harbor / ghcr / cosign)
+        - Worktrace (runtime threat detection)
+        - Web dashboard / UI
+        - Auth — RBAC / OIDC / OAuth / tokens
+        - CLI
+        - General / not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: What do you need help with?
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Anything else that might help us answer faster (what you've already tried, links, screenshots)
+    validations:
+      required: false

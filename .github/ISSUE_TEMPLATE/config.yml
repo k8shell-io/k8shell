@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Questions & General Discussion
+    url: https://github.com/k8shell-io/k8shell/discussions
+    about: For general questions that aren't a bug or feature request
+  - name: 📖 Documentation
+    url: https://github.com/k8shell-io
+    about: Check the docs before filing — your answer might already be there
